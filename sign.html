@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Дорожные знаки</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+        .tooltip {
+            position: relative;
+        }
+
+            .tooltip .ui-tooltip {
+                position: absolute;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                padding: 5px;
+                z-index: 1;
+            }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="signs/1_1.svg" alt="Знак 1_1" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_2.svg" alt="Знак 1_2" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_3_1.svg" alt="Знак 1_3_1" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_4_1.svg" alt="Знак 1_4_1" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_5.svg" alt="Знак 1_5" data-hint="Описание" class="tooltip" />
+    </p>
+    <p>
+        <img src="signs/1_6.svg" alt="Знак 1_6" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_7.svg" alt="Знак 1_7" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_8.svg" alt="Знак 1_8" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_9.svg" alt="Знак 1_9" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_10.svg" alt="Знак 1_10" data-hint="Описание" class="tooltip" />
+    </p>
+    <p>
+        <img src="signs/1_11_1.svg" alt="Знак 1_11_1" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_12_1.svg" alt="Знак 1_12_1" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_13.svg" alt="Знак 1_13" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_14.svg" alt="Знак 1_14" data-hint="Описание" class="tooltip" />
+        <img src="signs/1_15.svg" alt="Знак 1_15" data-hint="Описание" class="tooltip" />
+    </p>
+    <script>
+        $(function () {
+            $(document).tooltip({
+                items: "img",
+                content: function () {
+                    var $element = $(this);
+                    if ($element.is("img")) {
+                        return $element.data('hint');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
